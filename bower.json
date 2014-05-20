@@ -1,0 +1,23 @@
+{
+  "name": "angular-click-outside",
+  "main": "angular-click-outside.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/twhitbeck/angular-click-outside",
+  "authors": [
+    "Tim Whitbeck <twhitbeck@gmail.com>"
+  ],
+  "description": "Simple AngularJS directive to run code when clicking outside of an element",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
