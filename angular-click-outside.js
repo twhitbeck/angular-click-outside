@@ -1,5 +1,5 @@
 angular.module('tw.directives.clickOutside', []).
-directive('twClickOutside', function($document, $parse) {
+directive('twClickOutside', ['$document', '$parse', function($document, $parse) {
   return {
     link: function(scope, el, attr) {
       if (!attr.twClickOutside) {
@@ -30,4 +30,4 @@ directive('twClickOutside', function($document, $parse) {
       });
     }
   };
-});
+}]);
