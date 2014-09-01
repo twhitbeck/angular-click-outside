@@ -12,21 +12,20 @@ directive('twClickOutside', ['$document', '$parse', function($document, $parse) 
       }
 
       var nakedEl = el[0];
+      var fn = $parse(attr.twClickOutside);
 
-      $document.on('click', function(e) {
-        if (nakedEl === e.target) {
+      var handler = function(e) {
+        if (nakedEl === e.target || nakedEl.contains(e.target) || (ignore && ignore(scope))) {
           return;
         }
 
-        if (nakedEl.contains(e.target)) {
-          return;
-        }
+        scope.$apply(fn);
+      };
 
-        if (ignore && ignore(scope)) {
-          return;
-        }
+      $document.on('click', handler);
 
-        scope.$apply(attr.twClickOutside);
+      scope.$on('$destroy', function(e) {
+        $document.off('click', handler);
       });
     }
   };
