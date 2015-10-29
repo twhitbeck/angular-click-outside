@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-strict-di>
+  <head>
+    <base href="/example/">
+
+    <title>angular-click-outside</title>
+
+    <link href="styles.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="MainController as main">
+    <button ng-click="showMenu = true" ng-hide="showMenu">Show Menu</button>
+
+    <ul class="menu" ng-show="showMenu" tw-click-outside="showMenu = false" ignore-if="!showMenu">
+      <li class="menu-item">this</li>
+      <li class="menu-item">is</li>
+      <li class="menu-item">the</li>
+      <li class="menu-item">menu</li>
+    </ul>
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../angular-click-outside.js"></script>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
   "description": "A simple angular directive for executing code when clicking outside an element",
   "main": "angular-click-outside.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "browser-sync start --server --files \"**/*.html, **/*.js, **/*.css\" --startPath \"/example\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/twhitbeck/angular-click-outside/issues"
   },
-  "homepage": "https://github.com/twhitbeck/angular-click-outside#readme"
+  "homepage": "https://github.com/twhitbeck/angular-click-outside#readme",
+  "devDependencies": {
+    "angular": "^1.4.7",
+    "browser-sync": "^2.9.11"
+  }
 }
