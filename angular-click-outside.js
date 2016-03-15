@@ -1,5 +1,5 @@
 angular.module('tw.directives.clickOutside', []).
-directive('twClickOutside', ['$window', '$parse', function($window, $parse) {
+directive('twClickOutside', ['$window', '$document', '$parse', function($window, $document, $parse) {
   return {
     link: function(scope, el, attr) {
       if (!attr.twClickOutside) {
