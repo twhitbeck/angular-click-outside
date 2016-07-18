@@ -25,7 +25,9 @@ directive('twClickOutside', ['$window', '$document', '$parse', function($window,
       $window.addEventListener('click', handler, true);
 
       scope.$on('$destroy', function(e) {
-        $document.off('click', handler);
+        if (typeof $document !== 'undefined') {
+          $document.off('click', handler);
+        }
       });
     }
   };
