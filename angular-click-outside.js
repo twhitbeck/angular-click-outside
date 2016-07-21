@@ -1,5 +1,5 @@
-angular.module('tw.directives.clickOutside', []).
-directive('twClickOutside', ['$window', '$document', '$parse', function($window, $document, $parse) {
+twClickOutside.$inject = ['$window', '$parse']
+function twClickOutside ($window, $parse) {
   return {
     link: function(scope, el, attr) {
       if (!attr.twClickOutside) {
@@ -25,8 +25,10 @@ directive('twClickOutside', ['$window', '$document', '$parse', function($window,
       $window.addEventListener('click', handler, true);
 
       scope.$on('$destroy', function(e) {
-        $document.off('click', handler);
+        $window.removeEventListener('click', handler);
       });
     }
   };
-}]);
+}
+
+angular.module('tw.directives.clickOutside', []).directive('twClickOutside', twClickOutside);
