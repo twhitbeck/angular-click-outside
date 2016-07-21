@@ -12,10 +12,7 @@
     <button ng-click="showMenu = true" ng-hide="showMenu">Show Menu</button>
 
     <ul class="menu" ng-show="showMenu" tw-click-outside="showMenu = false" ignore-if="!showMenu">
-      <li class="menu-item">this</li>
-      <li class="menu-item">is</li>
-      <li class="menu-item">the</li>
-      <li class="menu-item">menu</li>
+      <li ng-repeat="menuItem in main.menuItems" class="menu-item" ng-click="main.handleClick(menuItem)">{{menuItem}}</li>
     </ul>
 
     <script src="../node_modules/angular/angular.js"></script>

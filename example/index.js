@@ -5,14 +5,11 @@
 
   angular.module('app').controller('MainController', MainController);
 
-  MainController.$inject = ['$window'];
-  function MainController($window) {
-    this.click = function() {
-      $window.alert('Clicked!');
-    };
+  function MainController() {
+    this.menuItems = [ 'these', 'are', 'menu', 'items' ];
 
-    this.clickOutside = function() {
-      $window.alert('Clicked outside!');
+    this.handleClick = function (menuItem) {
+      console.log('you clicked', menuItem);
     };
   }
 })();
